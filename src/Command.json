@@ -1,0 +1,16 @@
+{
+"commands":[
+
+	{ "prefix":"mtr" , "functions":["motor(v0,v1)"] , "numargs":"2" } ,
+	{ "prefix":"mav" , "functions":["mav(v0,v1)"], "numargs":"2" } ,
+	{ "prefix":"slp" , "functions":["msleep(v0)"], "numargs":"1" } ,
+	{ "prefix":"frz" , "functions":["freeze(v0)"], "numargs":"1" } ,
+	{ "prefix":"mmr" , "functions":["motor(v0,v1)","motor(v2,v3)"] , "numargs":"4" } ,
+	{ "prefix":"mmv" , "functions":["mav(v0,v1)","mav(v2,v3)"] , "numargs":"4" } ,
+	{ "prefix":"amr" , "functions":["motor(0,v0)","motor(1,v1)","motor(2,v2)","motor(3,v3)"] , "numargs":"4" } ,
+	{ "prefix":"amv" , "functions":["mav(0,v0)","mav(1,v1)","mav(2,v2)","mav(3,v3)"] , "numargs":"4" } ,
+	{ "prefix":"mfz" , "functions":["freeze(v0)","freeze(v1)"] , "numargs":"2" } ,
+	{ "prefix":"ccn" , "functions":["create_connect()"] , "numargs":"0" } ,
+	{ "prefix":"cdd" , "functions":["create_drive_direct(v0,v1)"], "numargs":"2" }
+	]
+}

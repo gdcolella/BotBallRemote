@@ -1,8 +1,0 @@
-This is a package for remote control of a botball unit..
-
-INSTALLATION
-
-Go in to the build folder and run make, it will generate the command code and move the pertinent source files to the upload file.
-
-Then, run remoteinstall.sh with the ipaddress of the robot (it must be on the same network, of course!) and it will load the files
-to the robot and build the onboard library.

@@ -3,7 +3,7 @@ import pygame
 import socket
 import sys
 
-PORTNUM = 6969
+PORTNUM = 7777
 UPDATE = .0001
 DEAD = .005
 

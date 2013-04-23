@@ -3,7 +3,8 @@ DST = ../upload
 
 
 all :
-	rm -f $(DST)/*
+	rm -rf $(DST)
+	mkdir $(DST)
 	python GenerateCommands.py
 	cp $(SRC)/Control.c $(DST)
 	cp $(SRC)/Makefile  $(DST)

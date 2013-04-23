@@ -1,6 +1,6 @@
 import socket
 
-PORTNUM = 6969
+PORTNUM = 7777
 
 mySocket = socket.socket ( socket.AF_INET, socket.SOCK_STREAM )
 

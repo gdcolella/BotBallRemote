@@ -8,7 +8,7 @@ from Commands_gen import *
 
 lib = cdll.LoadLibrary('./libControl.so')
 
-PORT_NUM = 6969
+PORT_NUM = 7777
 writebuffer = ""
 
 outfile = ''

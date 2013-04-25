@@ -14,7 +14,9 @@ Then, run remoteinstall.sh with the ipaddress of the robot, and it will be insta
 RUNNING
 
 The usual way to run the server is over ssh. Execute 
+
 >python /kovan/network/networkHandler.py
+
 to begin running the server. 
 
 Another way to run the server is through the ServerRunner program that is installed to /kovan/binaries ( and should be accessible

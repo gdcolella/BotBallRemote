@@ -8,7 +8,7 @@ INSTALLATION
 
 Go in to the build folder and run make, it will generate the upload folder with all the files that should be pushed to the robot.
 
-Then, run remoteinstall.sh with the ipaddress of the robot, and it will be installed.
+Then, run remoteinstall.sh with the IP address of the robot as an argument, and it will be installed.
 
 
 RUNNING

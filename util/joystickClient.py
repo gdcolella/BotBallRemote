@@ -7,16 +7,27 @@ PORTNUM = 7777
 UPDATE = .0001
 DEAD = .005
 
+if(len(sys.argv) < 2):
+	print "IP Address to connect to? "
+	ipaddr = raw_input()
+else:
+	ipaddr = sys.argv[1]
+
+
 pygame.init()
 pygame.joystick.init()
 joysticks = [pygame.joystick.Joystick(x) for x in range(pygame.joystick.get_count())]
+
+if(len(joysticks)<1):
+	print "Cannot connect to joystick.. is it connected? "
+	sys.exit()
 
 joystick = joysticks[0]
 joystick.init()
 
 mySocket = socket.socket ( socket.AF_INET, socket.SOCK_STREAM )
 
-mySocket.connect( (sys.argv[1] , PORTNUM) )
+mySocket.connect( (ipaddr , PORTNUM) )
 
 power = 100
 clawpower = 20

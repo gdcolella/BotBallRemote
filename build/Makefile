@@ -9,3 +9,4 @@ all :
 	cp $(SRC)/Control.c $(DST)
 	cp $(SRC)/Makefile  $(DST)
 	cp $(SRC)/networkHandler.py $(DST)
+	cp $(SRC)/ServerRunner.c $(DST)

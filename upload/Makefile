@@ -3,6 +3,11 @@ CFLAGS = -lkovan -lm -lpthread -include kovan/kovan.h -include stdio.h -include 
 OBJFLAGS = -c -Wall -Werror -fpic
 SOFLAGS = -shared
 
+all : libControl.so ServerRunner
+
+ServerRunner : ServerRunner.c
+	$(CC) $(CFLAGS) -o ServerRunner ServerRunner.c
+	cp ServerRunner /kovan/binaries
 
 libControl.so : Control.o
 	$(CC) $(CFLAGS) $(SOFLAGS) -o libControl.so Control.o

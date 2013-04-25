@@ -8,6 +8,8 @@ from Commands_gen import *
 
 lib = cdll.LoadLibrary('./libControl.so')
 
+SERVERANSWER = False
+
 PORT_NUM = 7777
 writebuffer = ""
 
@@ -64,6 +66,11 @@ while True:
 	currentTime = time.time()
 	result = channelFile.readline()
 	print result
+
+	if(SERVERANSWER):
+		channelFile.write("READ\n")
+		channelFile.flush()
+
 	if(result.split()[0] == "END"):
 		break
 	command = handleLine(result)

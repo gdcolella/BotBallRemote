@@ -12,6 +12,7 @@ Then, run remoteinstall.sh with the ipaddress of the robot, and it will be insta
 
 
 RUNNING
+-------
 
 The usual way to run the server is over ssh. Execute 
 

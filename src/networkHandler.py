@@ -16,6 +16,12 @@ lib = cdll.LoadLibrary('./libControl.so')
 # (Not yet implemented in client-side code.)
 SERVERANSWER = False
 
+# If you're recording to a C file, this is how it starts. If in competition
+# uncomment the second line, otherwise just leave it
+RECORDPREFIX = "int main() {\n"
+#RECORDPREFIX = "int main() {\n wait_for_light(0); \n shut_down_in(110); \n" 
+
+
 # Port number, if you edit this make sure you edit it in client-side code as well.
 PORT_NUM = 7777
 
@@ -74,17 +80,17 @@ thisSocket.bind( ('',PORT_NUM) )
 # Allow incoming connections
 thisSocket.listen(1)
 
+# If a recording is being made, open it and write the prefix
 if(outfile):
 	outFile = open('/kovan/binaries/' + outfile.strip()+'.c','w')
-	outFile.write('int main() {\n wait_for_light(0); \n shut_down_in(110); \
+	outfile.write(RECORDPREFIX)
 
-
-
+# If recording, then write an msleep equal to the time between commands, then the C commands
+# that were executed
 def writeCommand(command, ds):
 	if(outfile):
 		outFile.write("msleep("+str(ds)+");\n")
-		outFile.write(command.toCommands())
-		
+		outFile.write(command.toCommands())		
 
 channel, details = thisSocket.accept()
 channelFile = channel.makefile()

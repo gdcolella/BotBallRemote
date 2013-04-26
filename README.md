@@ -14,6 +14,11 @@ or efficient - let me know if something jumps out at you!
 INSTALLATION
 ------------
 
+Although the python code should be cross-platform, much of this package must be run on Linux (most notably the 
+build scripts and remote install functionality). It likely wouldn't be that hard to port to Windows though, so
+if there's interest I'll look in to it.
+
+
 ##NOTE:
 	This requires jinja2 and pygame to be installed.
 

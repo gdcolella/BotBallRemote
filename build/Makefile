@@ -10,3 +10,4 @@ all :
 	cp $(SRC)/Makefile  $(DST)
 	cp $(SRC)/networkHandler.py $(DST)
 	cp $(SRC)/ServerRunner.c $(DST)
+	chmod +x $(DST)/networkHandler.py

@@ -14,7 +14,7 @@ lib = cdll.LoadLibrary('./libControl.so')
 # Tells the server to return a line after each command is processed, allowing the
 # client to know not to send more lines than can be processed at once
 # (Not yet implemented in client-side code.)
-SERVERANSWER = False
+RESPONSE = ""
 
 # If you're recording to a C file, this is how it starts. If in competition
 # uncomment the second line, otherwise just leave it
@@ -92,16 +92,26 @@ def writeCommand(command, ds):
 		outFile.write("msleep("+str(ds)+");\n")
 		outFile.write(command.toCommands())		
 
+# Accept a connection over the socket
 channel, details = thisSocket.accept()
+
+# Make the channel into a file object to simplify read/writes
 channelFile = channel.makefile()
+
 print 'Connection recieved: ',details
+
 while True:
+#	Get the current time before processing the command
 	currentTime = time.time()
+
+#	Get the command sent over the connection
 	result = channelFile.readline()
+
 	print result
 
-	if(SERVERANSWER):
-		channelFile.write("READ\n")
+#	If it's set to respond, send the response code
+	if(RESPONSE):
+		channelFile.write(RESPONSE+"\n")
 		channelFile.flush()
 
 	if(result.split()[0] == "END"):

@@ -92,10 +92,10 @@ while True:
 	if(lbutton != bool(getButton(3))):
 		lbutton = getButton(3)
 		handle_lbutton(lbutton)
-	if(rbutton != bool(joystick.get_button(4))):
-		rbutton = joystick.get_button(4)
+	if(rbutton != bool(getButton(4))):
+		rbutton = getButton(4)
 		handle_rbutton(rbutton)
-	if(joystick.get_button(2)):
+	if(joystick.getButton(2)):
 		mySocket.send("END\n")
 		break
 

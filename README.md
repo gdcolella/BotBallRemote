@@ -3,6 +3,11 @@ BotBallRemote
 
 Library for remote control of a KIPR Link and example client-side software.
 
+This is licensed under the MIT license, feel free to do just about anything you wish with it.
+
+If you find errors, have suggestions, or even find this somewhat useful, shoot me an email at Gregory.Colella@gmail.com .
+
+
 ##INSTALLATION
 ------------
 

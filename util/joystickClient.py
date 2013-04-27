@@ -2,6 +2,7 @@
 import pygame
 import socket
 import sys
+import os
 
 PORTNUM = 7777
 UPDATE = .0001
@@ -79,8 +80,9 @@ def getAxis(axis):
 
 def getButton(button):
 	sys.stdout = os.devnull
-	out = joystic.get_button(button)
+	out = joystick.get_button(button)
 	sys.stdout = sys.__stdout__
+	return out
 
 while True:
 	pygame.event.pump()
@@ -95,7 +97,7 @@ while True:
 	if(rbutton != bool(getButton(4))):
 		rbutton = getButton(4)
 		handle_rbutton(rbutton)
-	if(joystick.getButton(2)):
+	if(getButton(2)):
 		mySocket.send("END\n")
 		break
 

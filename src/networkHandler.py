@@ -55,8 +55,8 @@ def handleLine(thisLine):
 def getCommand(prefix, args):
 	# Uses the dictionary in the generated Commands_gen file to look up the
 	# command class, then instantiates and populates a new instance
-	if thisPrefix in Commands_gen.commandSet:
-		thisCommand = Commands_gen.commandSet[thisPrefix]()
+	if prefix in Commands_gen.commandSet:
+		thisCommand = Commands_gen.commandSet[prefix]()
 		thisCommand.create_from(args)
 		return thisCommand
 

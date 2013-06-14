@@ -1,0 +1,9 @@
+#include <stdio.h>
+
+{% for command in commands %}
+{%if command.name is defined %}
+void lib_{{command.name}}({%for i in range(command.numargs)%}int v{{i}} {%if not loop.last%},{%endif%}{%endfor%}){
+	printf("{{command.name}} {%for i in range(command.numargs)%} %d {%endfor%}\n"{%if command.numargs > 0%},{%endif%} {%for i in range(command.numargs)%}v{{i}}{%if not loop.last%},{%endif%}{%endfor%});
+}
+{%endif%}
+{%endfor%}

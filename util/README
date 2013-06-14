@@ -1,0 +1,15 @@
+BasicClient provides a TINY text interface to a server - in this case the robot..
+
+Some basic commands you can type are
+
+mtr [motor] [power]
+
+mav [motor] [power]
+
+mmr [motor1] [power1] [motor2] [power2]
+
+
+JoystickClient provides control via a joystick. It assumes that the wheels are on motors 1 and 3, and the claw is connected to motor 0.
+Yes, it's not very extensible or modifiable- it's simply not very good code. I made it in an afternoon as a proof of concept, development
+was concentrated in the server and control library. Feel free to write your own client code (but I'd definitely like to see it if you
+do end up making something!)

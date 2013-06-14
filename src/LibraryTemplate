@@ -1,0 +1,8 @@
+{% for command in commands %}
+{%if command.name is defined%}
+public void lib_{{command.name}}({% for i in range(command.numargs)%}int v{{i}} {% if not loop.last%},{% endif %}{%endfor%}){
+	{{command.functions[0]}};
+}
+
+{%endif%}
+{% endfor %}

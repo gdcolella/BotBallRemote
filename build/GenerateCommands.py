@@ -2,7 +2,7 @@ import json, re
 from jinja2 import Environment, Template, FileSystemLoader
 
 SRCDIR = '../src/'
-DSTDIR = '../upload/'
+DSTDIR = '../bin/'
 
 OUTFILE = 'Commands_gen.py'
 

@@ -4,8 +4,6 @@ import socket
 import time
 from ctypes import cdll
 
-lib = cdll.LoadLibrary('./libControl.so')
-
 class Command:
 	def create_from(self,argarray):
 		return
@@ -16,7 +14,8 @@ class Command:
 
 {% for command in commands %}
 class {{command.prefix}}_Command(Command):
-        def create_from(self, argarray ):
+        def create_from(self, argarray, execLib):
+		self.lib = execLib
                 {% for i in range( command.numargs ) %}
                 self.v{{i}} = argarray[{{i}}]
                 {% endfor %}
@@ -24,7 +23,7 @@ class {{command.prefix}}_Command(Command):
 
         def execute(self):
                 {% for funct in command.functions %}
-                lib.lib_{{funct | re_sub("v[0-9]","self.\g<0>")}}
+                self.lib.lib_{{funct | re_sub("v[0-9]","self.\g<0>")}}
                 {% endfor %}
 		return
 

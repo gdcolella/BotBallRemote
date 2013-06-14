@@ -1,16 +1,20 @@
 {
 "commands":[
 
-	{ "prefix":"mtr" , "functions":["motor(v0,v1)"] , "numargs":"2" } ,
-	{ "prefix":"mav" , "functions":["mav(v0,v1)"], "numargs":"2" } ,
-	{ "prefix":"slp" , "functions":["msleep(v0)"], "numargs":"1" } ,
-	{ "prefix":"frz" , "functions":["freeze(v0)"], "numargs":"1" } ,
+	{ "prefix":"mtr" , "functions":["motor(v0,v1)"] , "numargs":"2", "name":"motor"} ,
+	{ "prefix":"mav" , "functions":["mav(v0,v1)"], "numargs":"2", "name" : "mav"} ,
+	{ "prefix":"slp" , "functions":["msleep(v0)"], "numargs":"1", "name" : "msleep"} ,
+	{ "prefix":"frz" , "functions":["freeze(v0)"], "numargs":"1", "name" : "freeze"} ,
 	{ "prefix":"mmr" , "functions":["motor(v0,v1)","motor(v2,v3)"] , "numargs":"4" } ,
 	{ "prefix":"mmv" , "functions":["mav(v0,v1)","mav(v2,v3)"] , "numargs":"4" } ,
 	{ "prefix":"amr" , "functions":["motor(0,v0)","motor(1,v1)","motor(2,v2)","motor(3,v3)"] , "numargs":"4" } ,
 	{ "prefix":"amv" , "functions":["mav(0,v0)","mav(1,v1)","mav(2,v2)","mav(3,v3)"] , "numargs":"4" } ,
 	{ "prefix":"mfz" , "functions":["freeze(v0)","freeze(v1)"] , "numargs":"2" } ,
-	{ "prefix":"ccn" , "functions":["create_connect()"] , "numargs":"0" } ,
-	{ "prefix":"cdd" , "functions":["create_drive_direct(v0,v1)"], "numargs":"2" }
+	{ "prefix":"ssp" , "functions":["set_servo_position(v0,v1)"] , "numargs":"2" , "name" : "set_servo_position" },
+	{ "prefix":"ccn" , "functions":["create_connect()"] , "numargs":"0", "name" : "create_connect"} ,
+	{ "prefix":"cdn" , "functions":["create_disconnect()"], "numargs":"0", "name" : "create_disconnect"},
+	{ "prefix":"cdd" , "functions":["create_drive_direct(v0,v1)"], "numargs":"2", "name":"create_drive_direct"} ,
+	{ "prefix":"esv" , "functions":["enable_servos()"] , "numargs":"0" , "name" : "enable_servos" } ,
+	{ "prefix":"ao"  , "functions":["ao()"] , "numargs":"0", "name" : "ao"}
 	]
 }

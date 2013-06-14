@@ -31,7 +31,7 @@ mySocket = socket.socket ( socket.AF_INET, socket.SOCK_STREAM )
 mySocket.connect( (ipaddr , PORTNUM) )
 
 power = 100
-clawpower = 20
+clawpower = 200
 
 def handle_lbutton(cmd):
 	if(cmd):
